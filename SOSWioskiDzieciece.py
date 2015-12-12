@@ -1,10 +1,12 @@
-from flask import Flask
+from flask import Flask, request
+from PIL import Image
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def hello_world():
+
     return 'Hello World!'
 
 
