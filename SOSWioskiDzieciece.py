@@ -12,7 +12,7 @@ import OverlayingImages
 
 app = Flask(__name__)
 app.debug = True
-token = 'CAACEdEose0cBAMKyp8Ma2mT4fzfeFDjiiZB2jSWuCBmq4Np0ZChYgrdZBaMxZCLDio7ZBRahFv4Ga3l6eN1UN5DpWA72uQ9vuxWVS24btpUQWg1HcCmQzutk0Xnqls3fi4IZCgzA52GegDayODZBpKNQ9pfyvVvc8xn6ZAs53Rqgurddz16AlgxHHuqDPSInRXIqO0b8HgC8QSNhG5psPrVX'
+token = ''
 
 
 @app.route('/', methods = ['GET', 'POST'])
