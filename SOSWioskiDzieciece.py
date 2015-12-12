@@ -12,7 +12,7 @@ import OverlayingImages
 
 app = Flask(__name__)
 app.debug = True
-token = ''
+token = 'CAACEdEose0cBAJuQXTZB0vlgFCMb4TsW6OWX9Rn71Hm9djZCSclPisYQKk934CQj3vqSjdTdnXNrV8vwM7v8PAYlLVtmYNuMdmToZCYNEVAVdYkZBMRTOnWDs712LhFK466YapSUftEkgPIMIis7LZClHLi5sG3X5OUoY2AmsK4Es8o9p1GZBs79ZAhVAQS0QCUZBPml6i9W1HkzZCvorm5BD'
 
 
 @app.route('/', methods = ['GET', 'POST'])
@@ -31,6 +31,17 @@ def hello_world():
 
 
     return render_template('templates.html', trueImage = trueImage )
+
+@app.route('/token', methods=['GET', 'POST'])
+def token():
+    if request.method == 'POST':
+        if request.form.get('submit')=='Wstaw zdjecie':
+            print "zmieniamy zdjecie"
+        if request.form.get('submit')=='Dodaj post':
+            print "dodajemy post"
+        return render_template('operations.html')
+    else:
+        return render_template('operations.html')
 
 
 if __name__ == '__main__':
