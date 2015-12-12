@@ -12,12 +12,12 @@ import OverlayingImages
 
 app = Flask(__name__)
 app.debug = True
-token = 'CAACEdEose0cBAJuQXTZB0vlgFCMb4TsW6OWX9Rn71Hm9djZCSclPisYQKk934CQj3vqSjdTdnXNrV8vwM7v8PAYlLVtmYNuMdmToZCYNEVAVdYkZBMRTOnWDs712LhFK466YapSUftEkgPIMIis7LZClHLi5sG3X5OUoY2AmsK4Es8o9p1GZBs79ZAhVAQS0QCUZBPml6i9W1HkzZCvorm5BD'
+token = "CAACIe34ksn8BAO3pPCorbzHlbfMSYTYJL0p1ieCY0tO6OCKZB3UpudXxX0sGZBlZAwQBai5SClEVY1H3g7faQl3PbNU5sI1cj6ny4FGVp7hCYB1GAKX2xkAaV580UzsSZApEvgwzn9sq746CaOGvZCVoZAGpQHaklxrfAM6RwO2dSeJnyxPfGcDXoBv0pmWKulHZAxQf48H9wZDZD"
 
 
 @app.route('/', methods = ['GET', 'POST'])
 def hello_world():
-    qs = 'https://graph.facebook.com/me/picture?type=square&height=3000&width=3000' + '&access_token=' + token
+    qs = 'https://graph.facebook.com/me/picture?type=square&height=3000&width=3000' + '&access_token=CAACIe34ksn8BAO3pPCorbzHlbfMSYTYJL0p1ieCY0tO6OCKZB3UpudXxX0sGZBlZAwQBai5SClEVY1H3g7faQl3PbNU5sI1cj6ny4FGVp7hCYB1GAKX2xkAaV580UzsSZApEvgwzn9sq746CaOGvZCVoZAGpQHaklxrfAM6RwO2dSeJnyxPfGcDXoBv0pmWKulHZAxQf48H9wZDZD'
     res = requests.request('GET', qs)
     file = cStringIO.StringIO(res.content)
     img = Image.open(file)
@@ -25,11 +25,12 @@ def hello_world():
     tmp = tempfile.mktemp(suffix='.jpg', dir='./')
     img.save(tmp)
     image = open(tmp, 'rb')
+
     img = image.read()
-    os.remove('./' + tmp)
     trueImage = b64encode( img )
 
-
+    image.close()
+    os.remove(tmp)
     return render_template('templates.html', trueImage = trueImage )
 
 @app.route('/token', methods=['GET', 'POST'])
