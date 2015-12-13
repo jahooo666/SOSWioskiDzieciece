@@ -11,7 +11,7 @@ def add_organizacja(nazwa, email, nrKrs):
         return False
 
 
-def remove_umiejetnosc(organizacjaId):
+def remove_organizacja(organizacjaId):
     conn = dbConnection.connect_to_database()
     if conn.execute("DELETE FROM organizacje WHERE ID = ?", (organizacjaId,)):
         dbConnection.commit(conn)
