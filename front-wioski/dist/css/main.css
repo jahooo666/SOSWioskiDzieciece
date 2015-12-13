@@ -1,0 +1,31 @@
+header {
+  background: #0194e1;
+}
+
+header {
+  width: 100%;
+  height: 60px;
+  color: #fff;
+}
+
+h1 {
+  display: none;
+}
+
+.logo {
+  float: left;
+  height: 50px;
+  padding: 5px;
+}
+.logo img {
+  display: block;
+  margin: 0 auto;
+  height: 50px;
+  float: left;
+}
+.logo h2 {
+  float: left;
+  line-height: 50px;
+  margin: 0 0 0 10px;
+  font-size: 24px;
+}
