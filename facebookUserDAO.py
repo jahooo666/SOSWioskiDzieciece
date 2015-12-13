@@ -19,6 +19,7 @@ def inc_liczba_osob_z_polecenia(facebookId):
     dbConnection.commit(conn)
     return True
 
+
 def remove_facebook_user(facebookId):
     conn = dbConnection.connect_to_database()
     if conn.execute("DELETE FROM facebook_user where FACEBOOK_ID = ?", (facebookId,)):
