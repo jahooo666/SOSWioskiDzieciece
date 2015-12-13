@@ -17,7 +17,7 @@
 <body class="one-percent">
     <header>
         <div class="logo">
-            <h1>CoderDojo</h1>
+            <h1>Jeden procent</h1>
             <h2>Jeden procent</h2>
         </div>
     </header>   
@@ -30,9 +30,21 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-sm-push-3">
-                <form>
-
+            <div class="col-xs-12 col-sm-6 col-sm-push-3">
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="organization">Nazwa organizacji:</label>
+                        <input type="text" name="organization" class="form-control" id="organization">
+                    </div>
+                    <div class="form-group">
+                        <label for="krs">Numer KRS:</label>
+                        <input type="text" name="krs" class="form-control" id="krs">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" name="email" class="form-control" id="email">
+                    </div>
+                    <button type="submit" class="btn btn-default">Wyślij</button>
                 </form>
             </div> <!-- /.col-xs-12 -->
         </div> <!-- /.row -->
